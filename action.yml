@@ -113,7 +113,7 @@ runs:
     - name: Get specific changed files
       if: inputs.only-check-modified-files == 'true'
       id: changed-php-files
-      uses: tj-actions/changed-files@v36
+      uses: tj-actions/changed-files@v47
       with:
         files: |
           **.php
@@ -160,7 +160,7 @@ runs:
     - name: Create Pull Request
       id: pull-request
       if: inputs.create-pull-request == 'true' && failure()
-      uses: peter-evans/create-pull-request@v7
+      uses: peter-evans/create-pull-request@v8
       with:
         commit-message: ${{ inputs.commit-message }}
         title: ${{ inputs.pull-request-title }}
